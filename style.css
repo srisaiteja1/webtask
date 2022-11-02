@@ -1,0 +1,235 @@
+.body{
+    height: 100%;
+    width: 100%;
+    background-image: url("isai-ramos-_3SFFsWqCVg-unsplash.jpg");
+    
+}
+.header{
+  font-size: 150%;
+    text-align:center ;
+    width: 100%;
+    height: 150px;
+    color: rgb(253, 1, 1);
+    
+}
+.text{
+    text-align: justify;
+    padding-left: 90%;
+    color: white;
+    text-orientation: none;
+    padding-right: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+    max-width: fit-content;
+}
+.flip-box {
+    margin-top: 20px;
+    border-color: blueviolet;
+    background-color: transparent;
+    margin-bottom: 15%;
+    margin-right: 10%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid #02000000;
+    perspective: 1000px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .center1 {
+position: absolute;
+margin-top: -30%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: rgb(255, 0, 0);
+font-size: 200%;
+}
+.center{
+    position: absolute;
+margin-top: -20%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: rgb(247, 6, 6);
+font-size: 300%;
+}
+.icon-bar {
+width: 100%; 
+background-color: #555; 
+overflow: auto; 
+text-size-adjust: 100%;
+}
+
+.icon-bar a {
+float: left; 
+text-align: center; 
+width: 20%;
+padding: 12px 0; 
+transition: all 0.3s ease; 
+color: white; 
+font-size: 36px; 
+}
+
+.icon-bar a:hover {
+background-color: #000; 
+}
+
+.active {
+background-color: #04AA6D;
+}
+.rounded{
+
+    border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+.college{
+    color: white;
+    font-size: 100%;
+    align-content: flex-start;
+}
+
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.footer {
+  text-align: center;
+  padding: 3px;
+  background-image: url("v748-toon-111.jpg");
+  
+  color: rgb(255, 0, 0);
+}
+.foot{
+  font-size: 100%
+}
+
+
+.img-comp-container {
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.img-comp-img img {
+  display:block;
+  
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+
+#myVideo {
+  position: relative;
+  padding-left: 50%;
+  
+  width: 50%;
+  height: 50%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position:absolute;
+  
+  background: rgba(255, 253, 253, 0.5);
+  color: #f1f1f1;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: #f1f1f1;
+}
+
+#customers tr:nth-child(odd){background-color: #090909;}
+
+#customers tr:hover {background-color: rgb(8, 8, 8);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000503;
+  color: white;
+}
+.type{
+  color: white;
+  font-size: 100%;
+  width: 100%;
+}
+.skills{
+  color: #f1f1f1;
+}

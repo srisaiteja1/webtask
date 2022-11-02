@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student portfolio website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9f9c0df524.js" crossorigin="anonymous"></script>
+    <script>
+      function initComparisons() {
+      var x,i;
+      /*find all elements with an "overlay" class:*/
+      x = document.getElementsByClassName("img-comp-overlay");
+      for (i = 0; i < x.length; i++) {
+        /*once for each "overlay" element:
+        pass the "overlay" element as a parameter when executing the compareImages function:*/
+        compareImages(x[i]);
+      }
+      function compareImages(img) {
+        var slider, img, clicked = 0, w, h;
+        /*get the width and height of the img element*/
+        w = img.offsetWidth;
+        h = img.offsetHeight;
+        /*set the width of the img element to 50%:*/
+        img.style.width = (w / 2) + "px";
+        /*create slider:*/
+        slider = document.createElement("DIV");
+        slider.setAttribute("class", "img-comp-slider");
+        /*insert slider*/
+        img.parentElement.insertBefore(slider, img);
+        /*position the slider in the middle:*/
+        slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+        slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+        /*execute a function when the mouse button is pressed:*/
+        slider.addEventListener("mousedown", slideReady);
+        /*and another function when the mouse button is released:*/
+        window.addEventListener("mouseup", slideFinish);
+        /*or touched (for touch screens:*/
+        slider.addEventListener("touchstart", slideReady);
+        /*and released (for touch screens:*/
+        window.addEventListener("touchend", slideFinish);
+        function slideReady(e) {
+          /*prevent any other actions that may occur when moving over the image:*/
+          e.preventDefault();
+          /*the slider is now clicked and ready to move:*/
+          clicked = 1;
+          /*execute a function when the slider is moved:*/
+          window.addEventListener("mousemove", slideMove);
+          window.addEventListener("touchmove", slideMove);
+        }
+        function slideFinish() {
+          /*the slider is no longer clicked:*/
+          clicked = 0;
+        }
+        function slideMove(e) {
+          var pos;
+          /*if the slider is no longer clicked, exit this function:*/
+          if (clicked == 0) return false;
+          /*get the cursor's x position:*/
+          pos = getCursorPos(e)
+          /*prevent the slider from being positioned outside the image:*/
+          if (pos < 0) pos = 0;
+          if (pos > w) pos = w;
+          /*execute a function that will resize the overlay image according to the cursor:*/
+          slide(pos);
+        }
+        function getCursorPos(e) {
+          var a, x = 0;
+          e = (e.changedTouches) ? e.changedTouches[0] : e;
+          /*get the x positions of the image:*/
+          a = img.getBoundingClientRect();
+          /*calculate the cursor's x coordinate, relative to the image:*/
+          x = e.pageX - a.left;
+          /*consider any page scrolling:*/
+          x = x - window.pageXOffset;
+          return x;
+        }
+        function slide(x) {
+          /*resize the image:*/
+          img.style.width = x + "px";
+          /*position the slider:*/
+          slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+        }
+      }
+    }
+    </script>
+    
+</head>
+<body class="body">
+  <br><br><br><br>
+    <div class="header">
+      <img src="my image.jpg" style="height:180%;width: 20%;" alt="pic">
+    <h1>
+        <b>Sri Sai Teja</b>
+    </h1>
+    <h4>Thank you for visiting my website</h4>
+    <p >
+        welcome to my online portfolio, I am going to display my skills and aquired certifications
+    </p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="icon-bar">
+        <a class="active" href="index1.html"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="#"><i class="fa fa-fw fa-github"></i>skills</a>
+        <a href="#"><i class="fa fa-fw fa-binoculars"></i>Hobbies</a>
+        
+    </div >
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+               <img src="class.jpg" alt="class" style="width : 100%"> 
+                <div class="center1">most amazing thing in my life</div>
+                
+            </div>
+            <div class="flip-box-back">
+                <img src="Krish.png" alt="god" style="width: 65%;">
+                <div class="center">My life</div>
+            </div>
+            
+        </div>
+        
+          <pre class="text">
+            Hi,everyone I am <b style="color: red;">Srisaiteja Thullimilli</b>
+            I am from <em style="color: red;">Guntur District</em> Shifted to
+            <em style="color: red;">Hyderabad</em>. I am very much happy to show 
+            you my personal portfolio website. 
+            My father`s name is <b style="color: red;">Ramesh</b>,My Mother`s 
+            name is <b style="color: red;">Venkateswari</b>. I pursued My 
+            tenth in Unique High School, Chintal. 
+            I pursued my intermediate in Srichaitanya 
+            Junior college, currently I am pursuing 
+            BTech from CSE department in 
+            <em style="color: red;">Vardhaman College of Engineering</em> 
+            
+          </pre>
+    </div>
+    <hr class="rounded">
+    <h1 style="text-align: center; color:aliceblue; font-size:50px;">Hobbies</h1>
+    <div class="content">
+      <h1>Lifeorama</h1>
+      <p>My most favorite youtube channel, whenever I get depressed this is the only thing which gives me relief from my pain this channel is spiritual as well as inspirational also it gives us very good knowledge of our culture, our ethics and even about the current situations and addictions which are damaging the youth  </p>
+      <!-- Use a button to pause/play the video with JavaScript -->
+      
+    
+      <!-- The video -->
+      
+  <video autoplay muted loop id="myVideo">
+      <source src="lifeo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h2 style="color: white;text-align: center;font-size:50px;">I love poems</h2>
+  <p style="color: white; font-size: 150%;">
+    I have another hobby of writing poems which i started recently, it is giving me new confidence of creativity in me that is poem writing I felt the urge to write poems in me recently, the main theme in my poems is to recollect the power and wisdom importance of almighty god. I wrote very less poems I am displaying the best among them
+  </p>
+  <h3 style="color: white; font-size: 150%;">Move the slider to view my poems</h3>
+  <div class="img-comp-container">
+    <div class="img-comp-img">
+      <img src="poem12.png" width="300" height="200">
+    </div>
+    <div class="img-comp-img img-comp-overlay">
+      <img src="poem21.png" width="300" height="200">
+    </div>
+  </div>
+  <script>
+    /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+    initComparisons();
+    </script>
+    <hr class="rounded">
+    <div class="type">
+      <h2 style="text-align:center;">Educational details</h2>
+      <pre style="font-size: 150%;">I cleared my 10<sup>th</sup>standard with 9.8 GPA and my intermediate with 960 marks I have mentioned all those 
+things in a simple tabular form</pre>
+    </div>
+    
+    <table id="customers">
+      <tr>
+        <th>Standard</th>
+        <th>Institution</th>
+        <th>Grade</th>
+        <th>Passed year</th>
+      </tr>
+      <tr>
+        <td>10<sup>th</sup>class</td>
+        <td>Unique High School</td>
+        <td>9.8</td>
+        <td>2019</td>
+      </tr>
+      <tr>
+        <td>Intermediate</td>
+        <td>Sri Chaitanya Junior College</td>
+        <td>960</td>
+        <td>2021</td>
+      </tr>
+      
+     
+      
+    </table>
+    <hr class="rounded">
+    <div class="skills">
+      <h2 style="text-align: center;">Skills</h2>
+      
+      <div class="skill2">
+        <i class="fa-solid fa-square-code" style="font-size: 200%;">Coding</i>
+        <pre style="font-size: 150%;">
+I became very attracted to coding nowadays, it is as if we are speaking to computers
+        </pre>
+      </div>
+      <div class="skill3">
+        <i class="fa-light fa-timer" style="font-size: 200%;">Time-manager</i>
+        
+        <pre style="font-size: 150%;">
+I was taught how powerful time is, and I personally feel that there is no practical way to time travel 
+I never waste time
+        </pre>
+      </div>
+      <div class="skill1">
+        <i class="fa-solid fa-people-group" style="font-size: 200%;">Speaking</i>
+        <pre style="font-size: 150%;">
+I like meeting new people and talking to them. I am a good public speaker
+        </pre>
+      </div>
+
+
+    </div>
+ <hr class="rounded">
+<div class="college">
+  <h4 style="text-align:center ; font-size: 200%;">MY COLLEGE</h4>
+  <pre class="col1" style="font-size: 150%;">
+college is the most memorable thing of my life, this poem below best describes myself in the begining 
+of my college days
+  </pre>
+  <pre>
+  <i class="coli" style="font-size: 150%;">                
+  Don't overthink, don't tense your nerve'...
+  Not only our tangent is different but I'm also standing alone upon a messed up curve..!
+  I'm an unsocial guy and it's very well known...
+  Don't try to find me out, I'm lost in the illusion of my own..!
+    
+  It's not so easy for me to walk on the given way...
+  It's not so easy for me to give  instant reply on — what you say..!
+  It's not so easy for me to follow your set norm'...
+  Whenever I try to do so... I'm stopped by my inner storm..!
+    
+  I'm the one who tries to live under the table...
+  In the company of yours, I find myself uncomfortable..!
+  I run away, whenever I hear your call...
+  It's very tough for me to be friend with you all..!
+    
+  It will take some time for my shyness to end...
+  It will take me some time to make new friend'..!
+  So give me my time to stand with you all, on the same line...
+  Until that moment, let me live in the space and thought of mine..!</i></pre>
+   <pre style="font-size: 150%;">
+my college gave me a chance to change myself and frame myself in a better way so that I don`t become
+a lonely boy and I thank my class and my teachers for this 
+   </pre> 
+</div>
+<div>
+  <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2599.7053100007133!2d78.30708886862696!3d17.25488846991638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8da620f9d%3A0x19d0d79257022687!2sVardhaman%20College%20of%20Engineering!5e1!3m2!1sen!2sin!4v1666685322703!5m2!1sen!2sin" width="50%" height="400px" style="border: 5px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+</div>
+
+
+<footer class="footer">
+  <div class="foot">
+  <p style="font-size:100% ;">contact: Sri Sai Teja</p><br>
+  <a href="https://www.linkedin.com/in/srisaiteja-thullimilli-884117241?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6m2m3B%2BVSSOd5xDL7Tgb2g%3D%3D" class="fa fa-linkedin-square" >linkedin</a>
+  <br><br>
+  <a href="mailto:srisaiteja76@gmail.com" class="fa fa-google-plus">Gmail</a>
+  <br><br>
+  <a href="https://www.instagram.com/srisaiteja1123/" class="fa fa-instagram">Instagram</a>
+  <br>
+  <br>
+  <br>
+</div>
+</footer>
+</body>
+</html>
